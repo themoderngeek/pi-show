@@ -11,7 +11,7 @@ describe('App', () => {
 
     it('contains a Clock component', () => {
         const app = render(<App />);
-        expect(app.find('.digital')).to.have.length(1)
+        expect(app.find('.clock')).to.have.length(1)
     });
 });
 
