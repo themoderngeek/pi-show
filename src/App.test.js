@@ -1,8 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import App from './App';
+import { shallow, render } from 'enzyme';
+import { expect } from 'chai';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
+describe('App', () => {
+    it('renders correctly', () => {
+        const app = shallow(<App />);
+        expect(app).to.have.length(1);
+    });
+
+    it('contains a Clock component', () => {
+        const app = render(<App />);
+        expect(app.find('.digital')).to.have.length(1)
+    });
 });
+
