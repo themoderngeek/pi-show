@@ -28,7 +28,7 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <Clock date={this.state.date}/>
+                <Clock date={this.state.date} type="analog"/>
             </div>
         );
     }
