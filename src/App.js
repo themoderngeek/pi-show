@@ -29,7 +29,7 @@ class App extends Component {
         return (
             <div className="App">
                 <div className="clockContainer">
-                    <Clock date={this.state.date} type="digital"/>
+                    <Clock date={this.state.date} type="analog"/>
                 </div>
             </div>
         );
