@@ -53,7 +53,13 @@ describe('Clock', () => {
         const date = new Date(Date.parse("Sun, 03 Sep 2017 16:31:56"));
         const container = render(<Clock date={date} type="analog"/>);
         expect(container.find('.hours')).to.have.style("transform", "rotateZ(496deg)");
-    })
+    });
+
+    it('displays the current date in a div with the class DateView ', () => {
+        const date = new Date(Date.parse("Sun, 03 Sep 2017 16:31:56"));
+        const container = render(<Clock date={date} type="analog"/>);
+        expect(container.find('.DateView').text()).to.equal("Sunday, September 3, 2017")
+    });
 
 });
 
