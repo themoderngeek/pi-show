@@ -16,6 +16,9 @@ export default class Clock extends Component {
             second: '2-digit'
         });
 
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+
+
         let secondsStyle, minutesStyle, hoursStyle;
 
         if(this.props.type === "analog") {
@@ -35,6 +38,9 @@ export default class Clock extends Component {
                     <div className="hours" style={hoursStyle}>{time[0] + time[1]}</div>
                     <div className="minutes" style={minutesStyle}>{time[3] + time[4]}</div>
                     <div className="seconds" style={secondsStyle}>{time[6] + time[7]}</div>
+                </div>
+                <div className="DateView">
+                    {this.props.date.toLocaleDateString("en-Uk", options)}
                 </div>
             </div>
         );
